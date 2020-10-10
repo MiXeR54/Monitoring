@@ -1,0 +1,18 @@
+on:
+  push:
+    branches: [master]
+
+jobs:
+  echo:
+    runs-on: debian-latest
+    steps:
+      - name: Deploy NodeJS app
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+          cd ~/home/mon/Monitoring/
+          git pull
+          npm run start
