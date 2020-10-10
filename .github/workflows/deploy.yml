@@ -14,5 +14,5 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_PASSWORD }}
           script: |
           cd ~/home/mon/Monitoring/
-          git pull
-          npm run start
+            git pull
+            npm run start
