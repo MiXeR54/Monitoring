@@ -7,11 +7,11 @@ jobs:
     runs-on: debian-latest
     steps:
       - name: Deploy NodeJS app
-        uses: appleboy/ssh-action@v0.1.2
+        uses: shimataro/ssh-key-action@v2.1.0
         with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          host: ${{secrets.DEPLOY_IP}}
+          username: ${{ secrets.root }}
+          SSH_KEY: ${{ secrets.SSH_PASSWORD }}
           script: |
           cd ~/home/mon/Monitoring/
           git pull
