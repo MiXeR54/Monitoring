@@ -4,7 +4,7 @@ on:
 
 jobs:
   echo:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy NodeJS app
         uses: shimataro/ssh-key-action@v2.1.0
