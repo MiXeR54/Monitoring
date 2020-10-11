@@ -1,3 +1,4 @@
+name: SSH Deploy
 on:
   push:
     branches: [master]
