@@ -23,3 +23,5 @@ jobs:
       - run: chmod 600 "$HOME/.ssh/key"
       # Deploy
       - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@188.68.220.152:/home/monitoring/
+      # NodeJS install
+      - run: npm i
